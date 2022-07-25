@@ -26,6 +26,12 @@ module.exports = env => {
 		},
 		devServer: {
 			port: 3000,
+			static: {
+				directory: path.join(__dirname, 'public'),
+			},
+			open: true,
+			hot: true,
+			liveReload: true,
 		},
 		mode: 'development',
 		module: {

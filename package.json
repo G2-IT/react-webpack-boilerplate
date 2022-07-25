@@ -4,15 +4,16 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start:dev": "webpack serve --env ENVIRONMENT=development --open --hot",
-		"start:staging": "webpack serve --env ENVIRONMENT=staging --open --hot",
-		"start:prod": "webpack serve --env ENVIRONMENT=production --open --hot",
+		"start:dev": "webpack serve --env ENVIRONMENT=development",
+		"start:staging": "webpack serve --env ENVIRONMENT=staging",
+		"start:prod": "webpack serve --env ENVIRONMENT=production",
 		"build:dev": "webpack --env ENVIRONMENT=development --mode production",
 		"build:prod": "webpack --env ENVIRONMENT=production --mode production",
 		"build:staging": "webpack --env ENVIRONMENT=staging --mode production",
 		"lint:js": "eslint src --ext js,ts,jsx,tsx --max-warnings=0",
 		"lint:js:fix": "eslint src --ext js,ts,jsx,tsx --fix",
-		"lint:all": "eslint src --max-warnings=0"
+		"lint:all": "eslint src --max-warnings=0",
+		"prepare": "husky install"
 	},
 	"keywords": [],
 	"author": "",
@@ -39,11 +40,18 @@
 		"eslint-plugin-react": "^7.28.0",
 		"eslint-plugin-react-hooks": "^4.3.0",
 		"html-webpack-plugin": "^5.5.0",
+		"husky": ">=6",
+		"lint-staged": "^13.0.3",
 		"prettier": "2.5.1",
 		"ts-loader": "^9.3.1",
 		"typescript": "^4.7.4",
 		"webpack": "^5.73.0",
 		"webpack-cli": "^4.10.0",
 		"webpack-dev-server": "^4.9.3"
+	},
+	"lint-staged": {
+		"src/**/*.{js,ts,jsx,tsx,json}": [
+			"yarn lint:all"
+		]
 	}
 }

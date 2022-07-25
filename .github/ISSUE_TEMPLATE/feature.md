@@ -1,20 +1,20 @@
 ---
-name: Feature
-about: Adicionar uma nova feature no projeto
-title: 'Issue #número da issue - Coloque o título da nova feature aqui'
-labels: APP, feature
-assignees: 'dehlferreira'
+name: Feature request
+about: Suggest an idea for this project
+title: ''
+labels: ''
+assignees: ''
+
 ---
 
-### **Coloque o título da nova feature aqui:**
+**Is your feature request related to a problem? Please describe.**
+A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
-- [ ] Sub-task 1
-- [ ] Sub-task 2
+**Describe the solution you'd like**
+A clear and concise description of what you want to happen.
 
-### **Protótipo:**
+**Describe alternatives you've considered**
+A clear and concise description of any alternative solutions or features you've considered.
 
-**Figma:** Colocar o link do protótipo aqui no lugar deste texto
-
-### **Imagem ou vídeo para referência:**
-
-arrastar a imagem ou vídeo aqui para referência, caso não seja necessário apagar linha e título
+**Additional context**
+Add any other context or screenshots about the feature request here.

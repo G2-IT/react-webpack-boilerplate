@@ -6,4 +6,7 @@ module.exports = {
 	preset: 'ts-jest',
 	testEnvironment: 'jsdom',
 	setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
+	moduleNameMapper: {
+		'^@react-webpack-boilerplate/(.*)$': '<rootDir>/src/$1',
+	},
 };

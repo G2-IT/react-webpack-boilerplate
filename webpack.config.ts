@@ -56,6 +56,9 @@ const config = (env: { ENVIRONMENT: string }): Configuration => {
 		},
 		resolve: {
 			extensions: ['.tsx', '.ts', '.js'],
+			alias: {
+				'@react-webpack-boilerplate': path.resolve(__dirname, 'src/'),
+			},
 		},
 		plugins: [
 			new HtmlWebpackPlugin({

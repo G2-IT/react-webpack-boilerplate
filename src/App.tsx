@@ -1,6 +1,5 @@
+import RouterConfig from '@react-webpack-boilerplate/infrastructure/navigation';
 import React from 'react';
-
-import RouterConfig from './infrastructure/navigation';
 
 const App = () => {
 	return <RouterConfig />;

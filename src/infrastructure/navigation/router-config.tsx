@@ -1,9 +1,9 @@
+import SignInScreen from '@react-webpack-boilerplate/modules/authentication/screens/sign-in';
+import HomeScreen from '@react-webpack-boilerplate/modules/home/screens/home';
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import { ROUTER_PATHS } from '.';
-import SignInScreen from '../../modules/authentication/screens/sign-in';
-import HomeScreen from '../../modules/home/screens/home';
 import NotFoundScreen from './not-found';
 
 export const RouterConfig = () => {

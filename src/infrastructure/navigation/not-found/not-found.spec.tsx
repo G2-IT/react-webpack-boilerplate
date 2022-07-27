@@ -1,7 +1,7 @@
+import { render, screen } from '@react-webpack-boilerplate/tests';
 import React from 'react';
 
 import NotFoundScreen from '.';
-import { render, screen } from '../../../tests';
 
 describe('<NotFoundScreen/>', () => {
 	it('It should have correct text', () => {

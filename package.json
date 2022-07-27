@@ -14,7 +14,12 @@
 		"lint:js:fix": "eslint src --ext js,ts,jsx,tsx --fix",
 		"lint:all": "eslint src --max-warnings=0",
 		"prepare": "husky install",
-		"test": "jest"
+		"test": "jest --coverage false",
+		"test:watch": "jest --watch",
+		"test:watch:all": "jest --watchAll",
+		"test:ci": "CI=true yarn test",
+		"test:unit": "jest -c jest.config.unit.js",
+		"test:integration": "jest -c jest.config.integration.js"
 	},
 	"keywords": [],
 	"author": "",
@@ -66,7 +71,8 @@
 	},
 	"lint-staged": {
 		"src/**/*.{js,ts,jsx,tsx,json}": [
-			"yarn lint:all"
+			"yarn lint:all",
+			"yarn test"
 		]
 	}
 }

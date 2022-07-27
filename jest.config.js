@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-undef
 module.exports = {
 	clearMocks: true,
 	collectCoverage: true,

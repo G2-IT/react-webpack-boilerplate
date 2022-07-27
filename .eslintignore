@@ -1,3 +1,4 @@
 jest.config.js
 jest.config.unit.js
 jest.config.integration.js
+commitlint.config.js

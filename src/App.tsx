@@ -1,7 +1,9 @@
 import React from 'react';
 
+import RouterConfig from './infrastructure/navigation';
+
 const App = () => {
-	return <h1>Hello React Webpack Boilerplate</h1>;
+	return <RouterConfig />;
 };
 
 export default App;

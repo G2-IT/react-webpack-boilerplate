@@ -1,9 +1,11 @@
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import CssMinimizerWebpackPlugin from 'css-minimizer-webpack-plugin';
 import dotenv from 'dotenv';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import fs from 'fs';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
 import { Configuration, DefinePlugin } from 'webpack';
 
@@ -29,6 +31,7 @@ const config = (env: { ENVIRONMENT: string }): Configuration => {
 			path: path.resolve(__dirname, 'build'),
 			filename: '[name].[contenthash].js',
 			publicPath: '',
+			clean: true,
 		},
 		module: {
 			rules: [
@@ -46,10 +49,21 @@ const config = (env: { ENVIRONMENT: string }): Configuration => {
 						},
 					},
 				},
+				{
+					test: /\.css$/i,
+					use: [MiniCssExtractPlugin.loader, 'css-loader'],
+				},
 			],
 		},
 		resolve: {
 			extensions: ['.tsx', '.ts', '.js'],
+			alias: {
+				'@react-webpack-boilerplate': path.resolve(__dirname, 'src/'),
+			},
+		},
+		optimization: {
+			minimize: true,
+			minimizer: [new CssMinimizerWebpackPlugin(), '...'],
 		},
 		plugins: [
 			new HtmlWebpackPlugin({
@@ -63,6 +77,9 @@ const config = (env: { ENVIRONMENT: string }): Configuration => {
 			}),
 			new CleanWebpackPlugin(),
 			new DefinePlugin(envKeys),
+			new MiniCssExtractPlugin({
+				filename: '[name].[contenthash].css',
+			}),
 		],
 	};
 };

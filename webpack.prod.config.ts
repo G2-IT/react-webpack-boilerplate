@@ -38,20 +38,15 @@ const config = (env: { ENVIRONMENT: string }): Configuration => {
 				{
 					test: /\.(ts|js)x?$/i,
 					exclude: /node_modules/,
-					use: {
-						loader: 'babel-loader',
-						options: {
-							presets: [
-								'@babel/preset-env',
-								'@babel/preset-react',
-								'@babel/preset-typescript',
-							],
-						},
-					},
+					use: { loader: 'babel-loader' },
 				},
 				{
 					test: /\.css$/i,
 					use: [MiniCssExtractPlugin.loader, 'css-loader'],
+				},
+				{
+					test: /\.(png|jpg|jpeg|gif)$/i,
+					type: 'asset/resource',
 				},
 			],
 		},
@@ -68,6 +63,7 @@ const config = (env: { ENVIRONMENT: string }): Configuration => {
 		plugins: [
 			new HtmlWebpackPlugin({
 				template: path.join(__dirname, '/public/index.html'),
+				favicon: path.join(__dirname, '/public/favicon.ico'),
 			}),
 			new ForkTsCheckerWebpackPlugin({
 				async: false,

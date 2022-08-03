@@ -2,6 +2,8 @@ import { ROUTER_PATHS } from '@react-webpack-boilerplate/infrastructure/navigati
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { Form } from './components';
+
 export const HomeView = () => {
 	return (
 		<div>
@@ -9,6 +11,8 @@ export const HomeView = () => {
 			<nav>
 				<Link to={ROUTER_PATHS.SIGN_IN}>Sign in</Link>
 			</nav>
+
+			<Form />
 		</div>
 	);
 };

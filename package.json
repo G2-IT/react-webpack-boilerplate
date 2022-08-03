@@ -17,9 +17,8 @@
 		"test": "jest",
 		"test:watch": "jest --watch",
 		"test:watch:all": "jest --watchAll",
-		"test:ci": "CI=true yarn test",
-		"test:unit": "jest -c jest.config.unit.js",
-		"test:integration": "jest -c jest.config.integration.js",
+		"test:unit": "CI=true jest -c jest.config.unit.js",
+		"test:integration": "CI=true jest -c jest.config.integration.js",
 		"commit": "git-cz"
 	},
 	"keywords": [],

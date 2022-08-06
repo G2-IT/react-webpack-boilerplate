@@ -9,6 +9,7 @@ pipeline {
     environment {
         CI = 'true'
     }
+    
     stages {
         stage('Install Packages') {
             steps {
@@ -16,25 +17,21 @@ pipeline {
             }
         }
     
-        stage('Test and Build') {
-            parallel {
-                stage('Run Unit Tests') {
-                    steps {
-                        sh 'yarn test:unit'
-                    }
-                }
+        stage('Create Build Artifacts') {
+            steps {
+                sh 'yarn build:dev'
+            }
+        }
 
-                stage('Run Integration Tests') {
-                    steps {
-                        sh 'yarn test:integration'
-                    }
-                }
+        stage('Run Unit Tests') {
+            steps {
+                sh 'yarn test:unit'
+            }
+        }
 
-               stage('Create Build Artifacts') {
-                    steps {
-                        sh 'yarn build:dev'
-                    }
-                }
+        stage('Run Integration Tests') {
+            steps {
+                sh 'yarn test:integration'
             }
         }
     }

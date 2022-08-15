@@ -19,7 +19,9 @@
 		"test:watch:all": "jest --watchAll",
 		"test:unit": "CI=true jest -c jest.config.unit.js",
 		"test:integration": "CI=true jest -c jest.config.integration.js",
-		"commit": "git-cz"
+		"test:e2e": "npx cypress open",
+		"commit": "git-cz",
+		"clean": "rm -rf node_modules"
 	},
 	"keywords": [],
 	"author": "",
@@ -55,6 +57,7 @@
 		"commitizen": "^4.2.5",
 		"css-loader": "^6.7.1",
 		"css-minimizer-webpack-plugin": "^4.0.0",
+		"cypress": "^10.4.0",
 		"cz-conventional-changelog": "3.3.0",
 		"dotenv": "^16.0.1",
 		"eslint": "^8.9.0",
